@@ -1,0 +1,10 @@
+debian/system.fluxbox-menu		/etc/X11/fluxbox/
+debian/fluxbox.menu-user		/etc/X11/fluxbox/
+debian/fluxbox.desktop			/usr/share/xsessions/
+debian-dark.png                         /usr/share/fluxbox/
+debian-blue.png                         /usr/share/fluxbox/
+ubuntu-dark.png                         /usr/share/fluxbox/
+additional-themes/Debian-blue           /usr/share/fluxbox/styles/
+additional-themes/Debian-dark           /usr/share/fluxbox/styles/
+additional-themes/Ubuntu-dark           /usr/share/fluxbox/styles/
+additional-themes/Ubuntu-light          /usr/share/fluxbox/styles/

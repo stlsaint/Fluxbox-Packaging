@@ -1,0 +1,51 @@
+From: Paul Tagliamonte <paultag@ubuntu.com>
+Author: Daniel Diaz<dydyam at gmail dot com>
+Date: Mon, 28  Mar  2011  07:06:01  +0000
+Subject: compile fix: added <cstdlib> to provide declaration for 'size_t' (gcc-4.6.x likes it that way)
+Description:
+ This adds in the cstdlib header in, since gcc decides to play dumb with the size_t type :)
+ This is picked from upstream. Thanks, Daniel!
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/fluxbox/+bug/771017
+Origin: upstream, http://git.fluxbox.org/fluxbox.git/commit/?id=d28e105075e3ec46515c322ee5dca6967a4cc696
+Forwarded: not-needed
+
+
+---
+diff --git a/src/FbTk/LayerItem.hh b/src/FbTk/LayerItem.hh
+index a4cdd49..ad33451 100644
+--- a/src/FbTk/LayerItem.hh
++++ b/src/FbTk/LayerItem.hh
+@@ -26,6 +26,7 @@
+ #include "Layer.hh"
+ #include "NotCopyable.hh"
+ #include <vector>
++#include <cstdlib> // size_t
+ 
+ namespace FbTk {
+ 
+diff --git a/src/FbTk/MacroCommand.hh b/src/FbTk/MacroCommand.hh
+index 932ecaf..bce2ce4 100644
+--- a/src/FbTk/MacroCommand.hh
++++ b/src/FbTk/MacroCommand.hh
+@@ -26,6 +26,7 @@
+ #include "RefCount.hh"
+ 
+ #include <vector>
++#include <cstdlib> // size_t
+ 
+ namespace FbTk {
+ 
+diff --git a/src/FbTk/MultLayers.hh b/src/FbTk/MultLayers.hh
+index 62c006f..3da25f6 100644
+--- a/src/FbTk/MultLayers.hh
++++ b/src/FbTk/MultLayers.hh
+@@ -24,6 +24,7 @@
+ #define FBTK_MULTLAYERS_HH
+ 
+ #include <vector>
++#include <cstdlib> // size_t
+ 
+ namespace FbTk {
+ 
+--
+cgit 
